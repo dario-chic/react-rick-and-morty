@@ -3,7 +3,7 @@
   --green: #b2df28;
   --darkGreen: #92b723;
   --black: rgba(20, 20, 20);
-  --lightBlack: rgb(20, 20, 20, 0.85);
+  --lightBlack: rgb(20, 20, 20, 0.93);
 }
 
 html {
@@ -18,12 +18,18 @@ a {
 }
 
 .header {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--lightBlue);
-  padding: 0.5rem;
-  transition: background-color 0.5s;
+  padding: 0.5rem 4%;
+  transition: background-color 0.5s, top 0.4s ease-in-out;
+}
+
+.header.down {
+  top: -100%;
 }
 
 .header.dark {
@@ -96,6 +102,10 @@ a {
   color: #000;
 }
 
+.home {
+  transition: background-color 0.5s ease-in-out;
+}
+
 .home.dark {
   background-color: var(--lightBlack);
 }
@@ -104,21 +114,102 @@ a {
   text-align: center;
 }
 
-.home__resume img {
-  min-width: 20rem;
-  max-width: 30rem;
+.home__header {
+  background: url("../src/assets/thumb-1920-606024.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.home__resume-text {
+  display: flex;
+}
+
+.home__resume-text p {
+  margin: auto;
+  max-width: 70rem;
+  padding: 1rem 3%;
+  white-space: pre-wrap;
+  font-size: 1.2rem;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.home__resume-text p img {
+  margin: auto;
+  display: block;
+  width: 100%;
+  max-width: 20rem;
+}
+
+.home__resume.light p {
+  color: var(--black);
+}
+
+@media only screen and (max-width: 1000px) {
+  .home__header {
+    height: 50vh;
+  }
+
+  .home__resume-text {
+    display: block;
+  }
+
+  .home__resume-text .img {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 800px) {
-  .nav {
-    display: none;
+  .header.scrollTop {
+    top: 0;
   }
 
   .nav__bar {
     display: block;
   }
 
+  .nav {
+    display: none;
+    position: fixed;
+    right: -100;
+    top: 4rem;
+    flex-direction: column;
+    width: 95%;
+    height: 100vh;
+    padding-top: 2.5rem;
+    text-align: center;
+    background-color: var(--lightBlue);
+    transition: all 1s ease-in-out !important;
+  }
+
+  .nav:hover {
+    right: 50 !important;
+  }
+
+  .nav.light {
+    background-color: rgba(0, 181, 204, 0.9);
+  }
+
+  .nav.dark {
+    background-color: var(--lightBlack);
+  }
+
   .nav.active {
     display: flex;
+    right: 0;
+  }
+
+  .nav__link {
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+  }
+
+  .nav__actions {
+    margin: auto;
+    margin-top: 1rem;
   }
 }
