@@ -1,24 +1,44 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+
+import { NavLink } from "react-router-dom";
+import LanguageContext from "../context/LanguageContext";
+import ThemeContext from "../context/ThemeContext";
+import LanguageChanger from "./LanguageChanger";
+import ThemeChanger from "./ThemeChanger";
 
 const Header = () => {
+  const { texts } = useContext(LanguageContext);
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <div>
-      <Link to="/">
-        <img src="../assets/Rick-And-Morty-Logo.png" alt="Rick and Morty" />
-      </Link>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/characters">Characters</Link>
-          </li>
-          <li>
-            <Link to="/episodes">Episodes</Link>
-          </li>
-        </ul>
+    <div className={`header ${theme}`}>
+      <img
+        src="Rick-And-Morty-Logo.png"
+        alt="Rick and Morty"
+        className="header__logo"
+      />
+      <nav className="nav">
+        <NavLink to="/" activeclassname="active" className="nav__link">
+          {texts.header.home}
+        </NavLink>
+        <NavLink
+          to="/characters"
+          activeclassname="active"
+          className="nav__link"
+        >
+          {texts.header.characters}
+        </NavLink>
+        <NavLink to="/episodes" activeclassname="active" className="nav__link">
+          {texts.header.episodes}
+        </NavLink>
+
+        <div className="nav__actions">
+          <div>
+            <ThemeChanger className="theme-changer" />
+            <LanguageChanger className="language-changer" />
+          </div>
+        </div>
       </nav>
     </div>
   );
