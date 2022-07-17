@@ -18,7 +18,16 @@ function App() {
               <HashRouter>
                 <Header />
                 <Routes>
-                  <Route path="/" element={<Home />} />
+                  <Route path="/" element={<Home />}>
+                    <Route
+                      path="character/:id"
+                      element={
+                        <>
+                          <h2>Hola</h2>
+                        </>
+                      }
+                    />
+                  </Route>
                   <Route
                     path="characters"
                     element={

@@ -8,19 +8,23 @@ const initialLanguage = localStorage.getItem("RaMLanguage") || "es";
 
 const translations = {
   es: {
+    es: true,
     header: { home: "Inicio", characters: "Personajes", episodes: "Episodios" },
     footer: { home: "Inicio", characters: "Personajes", episodes: "Episodios" },
     home: {
       resume:
         "Rick y Morty es una comedia animada estadounidense de ciencia ficción para adultos creada por Justin Roiland y Dan Harmon para el bloque de programación nocturna Adult Swim de Cartoon Network.\n\n La serie sigue las desventuras del cínico científico loco Rick Sanchez y su nieto de buen corazón pero inquieto Morty Smith, que dividía su tiempo entre la vida doméstica y las aventuras interdimensionales.",
+      mainCharactersTitle: "Personajes Principales",
     },
   },
   en: {
+    en: true,
     header: { home: "Home", characters: "Characters", episodes: "Episodes" },
     footer: { home: "Home", characters: "Characters", episodes: "Episodes" },
     home: {
       resume:
         "Rick and Morty is an American adult animated science fiction sitcom created by Justin Roiland and Dan Harmon for Cartoon Network's nighttime programming block Adult Swim.\n\n The series follows the misadventures of cynical mad scientist Rick Sanchez and his good-hearted, but fretful grandson Morty Smith, who split their time between domestic life and interdimensional adventures.",
+      mainCharactersTitle: "Main Characters",
     },
   },
 };

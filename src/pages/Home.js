@@ -1,5 +1,7 @@
 import React from "react";
 import { useContext } from "react";
+import { Outlet } from "react-router-dom";
+import MainCharacters from "../components/MainCharacters";
 import Resume from "../components/Resume";
 import ActiveNavContext from "../context/ActiveNavContext";
 import ThemeContext from "../context/ThemeContext";
@@ -9,9 +11,17 @@ const Home = () => {
   const { handleActiveNav } = useContext(ActiveNavContext);
 
   return (
-    <div className={`home ${theme}`} onClick={handleActiveNav}>
+    <div
+      className={`home ${theme}`}
+      onClick={() => {
+        handleActiveNav(false);
+      }}
+    >
       <div className="home__header"></div>
       <Resume theme={theme} />
+      <hr />
+      <MainCharacters theme={theme} />
+      <Outlet />
       <br />
       <br />
       <br />

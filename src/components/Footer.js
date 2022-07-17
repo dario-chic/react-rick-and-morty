@@ -1,15 +1,21 @@
 import React from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import ActiveNavContext from "../context/ActiveNavContext";
 import LanguageContext from "../context/LanguageContext";
 import ThemeContext from "../context/ThemeContext";
 
 const Footer = () => {
   const { theme } = useContext(ThemeContext);
   const { texts } = useContext(LanguageContext);
-
+  const { handleActiveNav } = useContext(ActiveNavContext);
   return (
-    <footer className={`footer ${theme}`}>
+    <footer
+      className={`footer ${theme}`}
+      onClick={() => {
+        handleActiveNav(false);
+      }}
+    >
       <div className="footer__links">
         <Link to="/" className="footer__links-home">
           {texts.footer.home}

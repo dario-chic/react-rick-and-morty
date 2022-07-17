@@ -6,8 +6,11 @@ const ActiveNavContext = createContext();
 const ActiveNavProvider = ({ children }) => {
   const [navIsActive, setnavIsActive] = useState(false);
 
-  const handleActiveNav = () =>
-    navIsActive ? setnavIsActive(false) : setnavIsActive(true);
+  const handleActiveNav = (isClickBar = false) => {
+    if (isClickBar) setnavIsActive(true);
+
+    navIsActive && setnavIsActive(false);
+  };
 
   const data = { navIsActive, handleActiveNav };
   return (

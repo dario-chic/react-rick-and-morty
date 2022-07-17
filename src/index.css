@@ -17,6 +17,29 @@ a {
   text-decoration: none;
 }
 
+hr {
+  color: var(--green);
+}
+/* --------- BTN --------- */
+
+.btn {
+  padding: 0.5rem 1.5em;
+  border: none;
+  border-radius: 0.3rem;
+  box-shadow: 1px 2px 5px var(--black);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--black);
+  background-color: var(--green);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--darkGreen);
+}
+
+/* --------- HEADER --------- */
+
 .header {
   position: sticky;
   top: 0;
@@ -26,6 +49,7 @@ a {
   background-color: var(--lightBlue);
   padding: 0.5rem 4%;
   transition: background-color 0.5s, top 0.4s ease-in-out;
+  z-index: 1000;
 }
 
 .header.down {
@@ -102,6 +126,8 @@ a {
   color: #000;
 }
 
+/* --------- HOME --------- */
+
 .home {
   transition: background-color 0.5s ease-in-out;
 }
@@ -131,7 +157,8 @@ a {
 .home__resume-text p {
   margin: auto;
   max-width: 70rem;
-  padding: 1rem 3%;
+  padding: 0rem 3%;
+  padding-bottom: 3rem;
   white-space: pre-wrap;
   font-size: 1.2rem;
   color: #fff;
@@ -148,6 +175,53 @@ a {
 .home__resume.light p {
   color: var(--black);
 }
+
+.main-characters {
+  text-align: center;
+}
+
+.main-characters__title {
+  color: var(--green);
+  text-align: center;
+  font-size: 2rem;
+}
+
+.main-characters__container {
+  /* /* background-color: #92b723; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+  align-content: center;
+
+  text-align: center;
+}
+
+/* --------- CHARACTER --------- */
+.character {
+  margin: auto;
+  width: 100%;
+  max-width: 420px;
+  min-width: 300px;
+  transition: transform 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.character:hover {
+  transform: scale(1.1);
+}
+
+.character img {
+  width: 100%;
+  border-radius: 2rem;
+}
+
+.character figcaption {
+  font-size: 2rem;
+  color: var(--lightBlue);
+  font-weight: bold;
+}
+
+/* --------- FOOTER --------- */
 
 .footer {
   padding: 1rem 2rem;
@@ -241,11 +315,11 @@ a {
   }
 
   .nav {
-    position: absolute;
+    position: fixed;
     top: 5rem;
     right: -50rem;
     flex-direction: column;
-    width: 95%;
+    width: 90%;
     height: 100vh;
     padding-top: 2.5rem;
     text-align: center;
