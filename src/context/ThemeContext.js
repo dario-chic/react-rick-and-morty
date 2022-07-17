@@ -10,7 +10,7 @@ const ThemeProvider = ({ children }) => {
 
   const handleTheme = (theme) => {
     setTheme(theme);
-    localStorage.setItem("RaMTheme", JSON.stringify(theme));
+    localStorage.setItem("RaMTheme", theme);
   };
 
   const data = { theme, handleTheme };

@@ -18,6 +18,7 @@ const Header = () => {
         alt="Rick and Morty"
         className="header__logo"
       />
+      <i className="fa-solid fa-bars nav__bar"></i>
       <nav className="nav">
         <NavLink to="/" activeclassname="active" className="nav__link">
           {texts.header.home}

@@ -1,19 +1,17 @@
 import React from "react";
+
 import { useContext } from "react";
 import ThemeContext from "../context/ThemeContext";
 
 const ThemeChanger = () => {
   const { theme, handleTheme } = useContext(ThemeContext);
 
-  return theme === "light" ? (
+  return (
     <i
-      className="fa-solid fa-sun theme-changer"
-      onClick={() => handleTheme("dark")}
-    ></i>
-  ) : (
-    <i
-      className="fa-solid fa-moon theme-changer"
-      onClick={() => handleTheme("light")}
+      className={`fa-solid ${
+        theme === "light" ? "fa-moon" : "fa-sun"
+      } theme-changer`}
+      onClick={() => handleTheme(theme === "light" ? "dark" : "light")}
     ></i>
   );
 };

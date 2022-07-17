@@ -39,6 +39,14 @@ a {
   justify-content: space-around;
 }
 
+.nav__bar {
+  display: none;
+  margin: 1rem;
+  font-size: 2rem;
+  color: var(--green);
+  cursor: pointer;
+}
+
 .nav__link {
   font-size: 1.1rem;
   margin: 1rem;
@@ -81,4 +89,18 @@ a {
 
 .language-changer option {
   color: #000;
+}
+
+@media only screen and (max-width: 800px) {
+  .nav {
+    display: none;
+  }
+
+  .nav__bar {
+    display: "";
+  }
+
+  .nav.active {
+    display: flex;
+  }
 }
