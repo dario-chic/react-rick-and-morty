@@ -3,7 +3,7 @@
   --green: #b2df28;
   --darkGreen: #92b723;
   --black: rgba(20, 20, 20);
-  --blackLight: rgb(20, 20, 20, 0.85);
+  --lightBlack: rgb(20, 20, 20, 0.85);
 }
 
 html {
@@ -47,13 +47,18 @@ a {
   cursor: pointer;
 }
 
+.nav__bar:hover {
+  color: var(--darkGreen);
+}
+
 .nav__link {
   font-size: 1.1rem;
   margin: 1rem;
   font-weight: 600;
 }
 
-.nav__link.active {
+.nav__link.active,
+.nav__link:hover {
   color: var(--green);
   text-decoration: underline 3px var(--green);
 }
@@ -91,13 +96,26 @@ a {
   color: #000;
 }
 
+.home.dark {
+  background-color: var(--lightBlack);
+}
+
+.home__resume {
+  text-align: center;
+}
+
+.home__resume img {
+  min-width: 20rem;
+  max-width: 30rem;
+}
+
 @media only screen and (max-width: 800px) {
   .nav {
     display: none;
   }
 
   .nav__bar {
-    display: "";
+    display: block;
   }
 
   .nav.active {
