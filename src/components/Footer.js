@@ -1,18 +1,24 @@
 import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import LanguageContext from "../context/LanguageContext";
+import ThemeContext from "../context/ThemeContext";
 
 const Footer = () => {
+  const { theme } = useContext(ThemeContext);
+  const { texts } = useContext(LanguageContext);
+
   return (
-    <footer className="footer">
+    <footer className={`footer ${theme}`}>
       <div className="footer__links">
         <Link to="/" className="footer__links-home">
-          Home
+          {texts.footer.home}
         </Link>
         <Link to="characters" className="footer__links-characters">
-          Characters
+          {texts.footer.characters}
         </Link>
         <Link to="episodes" className="footer__links-episodes">
-          Episodes
+          {texts.footer.episodes}
         </Link>
       </div>
       <span className="footer__copyright">© 2022 | Dario Chic</span>
