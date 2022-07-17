@@ -1,8 +1,7 @@
 import { HashRouter, Route, Routes } from "react-router-dom";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
-import ActiveNavContext, {
-  ActiveNavProvider,
-} from "./context/ActiveNavContext";
+import { ActiveNavProvider } from "./context/ActiveNavContext";
 import { LanguageProvider } from "./context/LanguageContext";
 import { ScrollProvider } from "./context/ScrollContext";
 import { ThemeProvider } from "./context/ThemeContext";
@@ -37,6 +36,7 @@ function App() {
                     }
                   />
                 </Routes>
+                <Footer />
               </HashRouter>
               {/* -- */}
             </ActiveNavProvider>

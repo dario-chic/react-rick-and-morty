@@ -10,12 +10,7 @@ const Home = () => {
 
   return (
     <div className={`home ${theme}`} onClick={handleActiveNav}>
-      <div className="home__header">
-        {/* <img
-          src="https://images4.alphacoders.com/606/thumb-1920-606024.jpg"
-          alt="Rick and Morty"
-        /> */}
-      </div>
+      <div className="home__header"></div>
       <Resume theme={theme} />
       <br />
       <br />
