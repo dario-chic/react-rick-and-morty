@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useContext } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import ThemeContext from "../context/ThemeContext";
 import { helpHttp } from "../helpers/helpHttp";
 import CharacterInfo from "./CharacterInfo";
@@ -15,6 +15,7 @@ const ModalWindow = ({ type, url }) => {
   const [error, setError] = useState(false);
   const { id } = useParams();
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     setError(false);
@@ -42,8 +43,14 @@ const ModalWindow = ({ type, url }) => {
   }, [data, error]);
 
   return (
-    <div className={`modal-window-container ${theme}`}>
-      <div className={`modal-window ${theme} info-window`}>
+    <div
+      className={`modal-window-container ${theme}`}
+      onClick={(e) => navigate(url + location.search)}
+    >
+      <div
+        className={`modal-window ${theme} info-window`}
+        onClick={(e) => e.stopPropagation()}
+      >
         {loader && <Loader />}
         {error && (
           <ErrorMessage
