@@ -226,12 +226,14 @@ hr {
 
 .modal-window-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(20, 20, 20, 0.7);
-  z-index: 100000;
+  z-index: 9999;
   /* transition: visibility, opacity 0.5s ease; */
   animation-name: ease;
   animation-duration: 1s;
@@ -250,8 +252,131 @@ hr {
   }
   to {
     opacity: 1;
-    z-index: 100000;
   }
+}
+
+.modal-window {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-content: center;
+  width: 90%;
+  max-width: 50rem;
+  min-width: 360px;
+  height: 90%;
+  border: 4px solid var(--green);
+  background-color: var(--black);
+  overflow: auto;
+}
+
+.modal-window .close {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  padding: 0.2rem 1rem;
+  background: var(--green);
+  border: none;
+  font-size: 2.5rem;
+  color: var(--black);
+  cursor: pointer;
+}
+
+/*! -- Character --- !*/
+.profile {
+  text-align: center;
+}
+
+.profile img {
+  border: 4px solid var(--lightBlue);
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.profile figcaption {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--lightBlue);
+}
+
+.features {
+  border-collapse: collapse;
+  width: 100%;
+  height: 100%;
+  background-color: var(--lightBlack);
+  text-align: center;
+  /* border: solid 2px black; */
+}
+
+.features th {
+  width: 50%;
+  border: solid 3px var(--green);
+  background-color: var(--green);
+  color: var(--black);
+  font-size: 1.3rem;
+}
+
+.features td {
+  border: solid 3px var(--green);
+  font-weight: bold;
+}
+
+.origin {
+  color: var(--lightBlue);
+}
+
+.alien {
+  color: var(--green);
+}
+
+.man,
+.male {
+  color: var(--lightBlue);
+}
+
+.dead,
+.poopybutthole {
+  color: #e9791d;
+}
+
+.heart,
+.alive {
+  color: #df2828;
+}
+
+.woman,
+.female {
+  color: #df28df;
+}
+
+.genderless,
+.mythological {
+  color: #00ffe1;
+}
+
+.unknown {
+  color: #1225fb;
+}
+
+.human,
+.humanoid {
+  color: #ffea00;
+}
+
+.robot {
+  color: #dadada;
+}
+
+.animal {
+  color: #8f4704;
+}
+
+.disease {
+  color: #107d8c;
+}
+
+.airdate {
+  color: #e9791d;
 }
 
 /* --------- FOOTER --------- */
@@ -380,5 +505,14 @@ hr {
   .nav__actions {
     margin: auto;
     margin-top: 1rem;
+  }
+
+  .modal-window {
+    width: 100%;
+    height: 100%;
+  }
+
+  .profile img {
+    width: 100%;
   }
 }
