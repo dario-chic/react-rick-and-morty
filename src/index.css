@@ -49,7 +49,7 @@ hr {
   background-color: var(--lightBlue);
   padding: 0.5rem 4%;
   padding-right: 2%;
-  transition: background-color 0.5s, top 0.4s ease-in-out;
+  transition: background-color 0.5s, top 0.25s ease-in-out;
   z-index: 1000;
 }
 
@@ -236,7 +236,7 @@ hr {
   z-index: 9999;
   /* transition: visibility, opacity 0.5s ease; */
   animation-name: ease;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }
@@ -261,13 +261,12 @@ hr {
   flex-direction: column;
   justify-items: center;
   align-content: center;
-  width: 90%;
+  width: 95%;
   max-width: 50rem;
-  min-width: 360px;
-  height: 90%;
+  height: 95%;
   border: 4px solid var(--green);
   background-color: var(--black);
-  overflow: auto;
+  overflow-y: auto;
 }
 
 .modal-window .close {
@@ -506,12 +505,9 @@ hr {
     margin: auto;
     margin-top: 1rem;
   }
+}
 
-  .modal-window {
-    width: 100%;
-    height: 100%;
-  }
-
+@media only screen and (max-width: 400px) {
   .profile img {
     width: 100%;
   }

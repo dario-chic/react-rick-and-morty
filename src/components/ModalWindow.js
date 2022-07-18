@@ -1,17 +1,20 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useContext } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import ThemeContext from "../context/ThemeContext";
 import { helpHttp } from "../helpers/helpHttp";
 import Loader from "./Loader";
 
-const ModalWindow = ({ type }) => {
+const ModalWindow = ({ type, url }) => {
   const { theme } = useContext(ThemeContext);
   const [data, setData] = useState(null);
   const [loader, setLoader] = useState(false);
   const [error, setError] = useState(false);
   const { id } = useParams();
+  const location = useLocation();
+
+  console.log(location);
 
   useEffect(() => {
     setLoader(true);
@@ -145,9 +148,9 @@ const ModalWindow = ({ type }) => {
         {loader && <Loader />}
         {data && (
           <>
-            <button className="close">
+            <Link to={url + location.search} className="close">
               <i className="fa-solid fa-circle-arrow-left"></i>
-            </button>
+            </Link>
             <figure className="profile">
               <img src={data.image} alt="" />
               <figcaption>{data.name.toUpperCase()}</figcaption>

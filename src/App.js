@@ -6,6 +6,7 @@ import { ActiveNavProvider } from "./context/ActiveNavContext";
 import { LanguageProvider } from "./context/LanguageContext";
 import { ScrollProvider } from "./context/ScrollContext";
 import { ThemeProvider } from "./context/ThemeContext";
+import Characters from "./pages/Characters";
 import Home from "./pages/Home";
 
 function App() {
@@ -22,17 +23,17 @@ function App() {
                   <Route path="/" element={<Home />}>
                     <Route
                       path="character/:id"
-                      element={<ModalWindow type={"character"} />}
+                      element={<ModalWindow type={"character"} url="/" />}
                     />
                   </Route>
-                  <Route
-                    path="characters"
-                    element={
-                      <>
-                        <h2>Characters</h2>
-                      </>
-                    }
-                  />
+                  <Route path="characters" element={<Characters />}>
+                    <Route
+                      path="character/:id"
+                      element={
+                        <ModalWindow type={"character"} url="/characters" />
+                      }
+                    />
+                  </Route>
                   <Route
                     path="episodes"
                     element={
