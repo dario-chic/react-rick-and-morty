@@ -29,18 +29,12 @@ const ModalWindow = ({ type, url }) => {
           if (!res.err) {
             setData(res);
           } else {
-            console.log(res);
             setError(res);
           }
           setLoader(false);
         });
     }
-    console.log(`https://rickandmortyapi.com/api/${type}/${id}`);
   }, [id, type]);
-
-  useEffect(() => {
-    console.log(data, error);
-  }, [data, error]);
 
   return (
     <div
