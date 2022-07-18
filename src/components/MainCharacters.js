@@ -14,7 +14,7 @@ const MainCharacters = ({ data, loader, error }) => {
   };
 
   return (
-    <div className="c-characters">
+    <div className="g-container">
       <h2 className="main-characters__title">
         {texts.home.mainCharactersTitle.toUpperCase()}
       </h2>
