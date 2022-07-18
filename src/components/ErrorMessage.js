@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./Button";
 
-const ErrorMessage = ({ error, url, home }) => {
+const ErrorMessage = ({ error, url, home, goBack }) => {
   return (
     <div className="err-c">
       {" "}
@@ -12,7 +12,7 @@ const ErrorMessage = ({ error, url, home }) => {
         <p>
           There are no results for this request or something else is going wrong
         </p>
-        <Button url={url}>Go back</Button>
+        {goBack && <Button url={url}>Go back</Button>}
         {home && <Button url="/">Go home</Button>}
         <span> </span>
       </div>

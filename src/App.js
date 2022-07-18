@@ -19,48 +19,48 @@ function App() {
               {/* -- */}
               <HashRouter>
                 <Header />
-                <div className="content">
-                  <Routes>
-                    {/*------------------*/}
-                    <Route path="/" element={<Home />}>
-                      <Route
-                        path="character/:id"
-                        element={<ModalWindow url="/" type={"character"} />}
-                      />
-                    </Route>
-                    {/*------------------*/}
-                    <Route path="characters" element={<Characters />}>
-                      <Route
-                        path="character/:id"
-                        element={<ModalWindow type={"character"} />}
-                      />
-                    </Route>
-                    {/*------------------*/}
+
+                <Routes>
+                  {/*------------------*/}
+                  <Route path="/" element={<Home />}>
                     <Route
-                      path="episodes"
-                      element={
-                        <>
-                          <Outlet />
-                        </>
-                      }
-                    >
-                      {" "}
-                      <Route
-                        path="episode/:id"
-                        element={<ModalWindow type={"episode"} />}
-                      />
-                    </Route>
-                    {/*------------------*/}
-                    <Route
-                      path="*"
-                      element={
-                        <>
-                          <h2>Otro lao</h2>
-                        </>
-                      }
+                      path="character/:id"
+                      element={<ModalWindow url="/" type={"character"} />}
                     />
-                  </Routes>
-                </div>
+                  </Route>
+                  {/*------------------*/}
+                  <Route path="characters" element={<Characters />}>
+                    <Route
+                      path="character/:id"
+                      element={<ModalWindow type={"character"} />}
+                    />
+                  </Route>
+                  {/*------------------*/}
+                  <Route
+                    path="episodes"
+                    element={
+                      <>
+                        <Outlet />
+                      </>
+                    }
+                  >
+                    {" "}
+                    <Route
+                      path="episode/:id"
+                      element={<ModalWindow type={"episode"} />}
+                    />
+                  </Route>
+                  {/*------------------*/}
+                  <Route
+                    path="*"
+                    element={
+                      <>
+                        <h2>Otro lao</h2>
+                      </>
+                    }
+                  />
+                </Routes>
+
                 <Footer />
               </HashRouter>
               {/* -- */}

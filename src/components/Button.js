@@ -5,7 +5,11 @@ const Button = ({ url, children, modifiers }) => {
   const navigate = useNavigate();
 
   return (
-    <button onClick={() => navigate(url)} className={`btn ${modifiers}`}>
+    <button
+      onClick={() => navigate(url)}
+      className={`btn ${modifiers}`}
+      style={{ margin: "auto" }}
+    >
       {children}
     </button>
   );
