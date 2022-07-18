@@ -1,6 +1,7 @@
 import { HashRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import ModalWindow from "./components/ModalWindow";
 import { ActiveNavProvider } from "./context/ActiveNavContext";
 import { LanguageProvider } from "./context/LanguageContext";
 import { ScrollProvider } from "./context/ScrollContext";
@@ -21,11 +22,7 @@ function App() {
                   <Route path="/" element={<Home />}>
                     <Route
                       path="character/:id"
-                      element={
-                        <>
-                          <h2>Hola</h2>
-                        </>
-                      }
+                      element={<ModalWindow type={"character"} />}
                     />
                   </Route>
                   <Route
