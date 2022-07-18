@@ -20,6 +20,11 @@ a {
 hr {
   color: var(--green);
 }
+
+.content {
+  min-height: calc(100vh - 240.55px);
+}
+
 /* --------- BTN --------- */
 
 .btn {
@@ -376,6 +381,33 @@ hr {
 
 .airdate {
   color: #e9791d;
+}
+
+.err-c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/*! --  Error Message  --- !*/
+
+.error-container {
+  /* display: flex; */
+  /* flex-direction: column; */
+  padding: 3rem 0;
+  color: var(--lightBlue);
+  text-align: center;
+}
+
+.error-message {
+  font-size: 3rem;
+  margin-bottom: -0.5rem;
+}
+
+.error-container p {
+  font-size: 1.4rem;
 }
 
 /* --------- FOOTER --------- */

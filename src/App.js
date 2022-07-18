@@ -1,4 +1,4 @@
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Outlet, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ModalWindow from "./components/ModalWindow";
@@ -19,30 +19,48 @@ function App() {
               {/* -- */}
               <HashRouter>
                 <Header />
-                <Routes>
-                  <Route path="/" element={<Home />}>
+                <div className="content">
+                  <Routes>
+                    {/*------------------*/}
+                    <Route path="/" element={<Home />}>
+                      <Route
+                        path="character/:id"
+                        element={<ModalWindow url="/" type={"character"} />}
+                      />
+                    </Route>
+                    {/*------------------*/}
+                    <Route path="characters" element={<Characters />}>
+                      <Route
+                        path="character/:id"
+                        element={<ModalWindow type={"character"} />}
+                      />
+                    </Route>
+                    {/*------------------*/}
                     <Route
-                      path="character/:id"
-                      element={<ModalWindow type={"character"} url="/" />}
-                    />
-                  </Route>
-                  <Route path="characters" element={<Characters />}>
-                    <Route
-                      path="character/:id"
+                      path="episodes"
                       element={
-                        <ModalWindow type={"character"} url="/characters" />
+                        <>
+                          <Outlet />
+                        </>
+                      }
+                    >
+                      {" "}
+                      <Route
+                        path="episode/:id"
+                        element={<ModalWindow type={"episode"} />}
+                      />
+                    </Route>
+                    {/*------------------*/}
+                    <Route
+                      path="*"
+                      element={
+                        <>
+                          <h2>Otro lao</h2>
+                        </>
                       }
                     />
-                  </Route>
-                  <Route
-                    path="episodes"
-                    element={
-                      <>
-                        <h2>Episodes</h2>
-                      </>
-                    }
-                  />
-                </Routes>
+                  </Routes>
+                </div>
                 <Footer />
               </HashRouter>
               {/* -- */}
