@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import ThemeContext from "../context/ThemeContext";
 import { helpHttp } from "../helpers/helpHttp";
 import CharacterInfo from "./CharacterInfo";
+import EpisodeInfo from "./EpisodeInfo";
 import ErrorMessage from "./ErrorMessage";
 import Loader from "./Loader";
 
@@ -25,6 +26,27 @@ const ModalWindow = ({ type, url }) => {
     if (type === "character") {
       helpHttp()
         .get(`https://rickandmortyapi.com/api/${type}/${id}`)
+        .then((res) => {
+          if (!res.err) {
+            setData(res);
+          } else {
+            setError(res);
+          }
+          setLoader(false);
+        });
+    }
+
+    if (type === "episode") {
+      let episodeAndSeason = [...id.matchAll(/\d+/gi)];
+      let info = {
+        season: episodeAndSeason[0][0],
+        episode: episodeAndSeason[1][0],
+      };
+
+      helpHttp()
+        .get(
+          `https://api.tvmaze.com/shows/216/episodebynumber?season=${info.season}&number=${info.episode}`
+        )
         .then((res) => {
           if (!res.err) {
             setData(res);
@@ -59,7 +81,10 @@ const ModalWindow = ({ type, url }) => {
         {data && type === "character" ? (
           <CharacterInfo data={data} url={url + location.search} />
         ) : (
-          data && type === "episode" && true
+          data &&
+          type === "episode" && (
+            <EpisodeInfo data={data} url={url + location.search} />
+          )
         )}
       </div>
     </div>

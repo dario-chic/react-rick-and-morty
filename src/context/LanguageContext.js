@@ -25,6 +25,12 @@ const translations = {
         reset: "reset",
       },
     },
+    episodeProfile: {
+      summary: "Resumen",
+      airdate: "Estreno",
+      episode: "Episodio",
+      rating: "Puntaje",
+    },
   },
   en: {
     en: true,
@@ -43,6 +49,12 @@ const translations = {
         status: "Status",
         reset: "reset",
       },
+    },
+    episodeProfile: {
+      summary: "Summary",
+      airdate: "Airdate",
+      episode: "Episode",
+      rating: "Rating",
     },
   },
 };

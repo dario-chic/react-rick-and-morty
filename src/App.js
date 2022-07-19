@@ -43,7 +43,9 @@ function App() {
                     {" "}
                     <Route
                       path="episode/:id"
-                      element={<ModalWindow type={"episode"} />}
+                      element={
+                        <ModalWindow type={"episode"} url={"/episodes"} />
+                      }
                     />
                   </Route>
                   {/*------------------*/}

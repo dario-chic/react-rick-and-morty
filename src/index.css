@@ -196,10 +196,33 @@ hr {
   margin-bottom: 0.5rem;
 }
 
+.profile.episode img {
+  border-radius: 1rem;
+  width: 50%;
+  min-width: 13rem;
+}
+
 .profile figcaption {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: var(--lightBlue);
+}
+
+.episode-summarize {
+  position: relative;
+  color: var(--green);
+}
+
+.episode-summarize summary {
+  font-weight: bold;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.episode-summarize details p {
+  padding-top: 1rem;
+  margin: auto;
+  width: 90%;
 }
 
 .features {
@@ -209,6 +232,11 @@ hr {
   background-color: var(--lightBlack);
   text-align: center;
   /* border: solid 2px black; */
+}
+
+.features.episode {
+  font-size: 1.2rem;
+  margin-top: 2rem;
 }
 
 .features th {
@@ -224,6 +252,22 @@ hr {
   padding: 1rem;
   border: solid 3px var(--green);
   font-weight: bold;
+}
+
+.airdate {
+  color: #e9791d;
+}
+
+.s {
+  color: var(--lightBlue);
+}
+
+.e {
+  color: #ffea00;
+}
+
+.rating {
+  color: var(--lightBlue);
 }
 
 .origin {

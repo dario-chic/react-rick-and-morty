@@ -49,12 +49,13 @@ const Episodes = () => {
               .get(
                 `https://api.tvmaze.com/shows/216/episodebynumber?season=${info.season}&number=${info.episode}`
               )
-              .then((res) => {
-                if (!res.err) {
+              .then((res2) => {
+                if (!res2.err) {
                   let episodio = {
-                    id: res.id,
-                    name: res.name,
-                    image: res.image.original,
+                    id: el.id,
+                    name: res2.name,
+                    image: res2.image.original,
+                    info: el.episode,
                   };
                   setEpisodes((episodes) => [...episodes, episodio]);
                 }
@@ -68,8 +69,15 @@ const Episodes = () => {
       });
   }, [searchParams]);
 
-  const handleUrl = () => {
-    console.log("a");
+  const handleUrl = (object) => {
+    let copyFilter = object;
+
+    if (copyFilter.name === "") {
+      delete copyFilter.name;
+      searchParams.delete("name");
+    }
+
+    setSearchParams({ page: searchParams.get("page") || 1, ...copyFilter });
   };
 
   return (
