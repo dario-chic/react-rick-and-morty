@@ -39,7 +39,6 @@ const Characters = () => {
       .then((res) => {
         if (!res.err) {
           setCharacters(res.results);
-          console.log(res);
           setNextPrev({ next: res.info.next, prev: res.info.prev });
         } else {
           setError(res);

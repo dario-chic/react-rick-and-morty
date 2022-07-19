@@ -26,8 +26,8 @@ const SearchForm = ({ type, handleUrl }) => {
   }, [searchParams]);
 
   const handleFilters = (name, value, instant) => {
-    setFilter({ ...filters, [name]: value });
-    if (instant) handleUrl({ ...filters, [name]: value });
+    setFilter({ ...filters, [name]: value, page: 1 });
+    if (instant) handleUrl({ ...filters, [name]: value, page: 1 });
   };
 
   const resetFilters = () => {

@@ -1,9 +1,11 @@
 import React from "react";
 import { useContext } from "react";
+import { useSearchParams } from "react-router-dom";
 import LanguageContext from "../context/LanguageContext";
 
 const SearchCharactersFilters = ({ handleFilters, filters, resetFilters }) => {
   const { texts } = useContext(LanguageContext);
+  const [searchParams, setSearchParams] = useSearchParams();
   let { searchFilters } = texts.searchForm;
 
   const selectFilter = (name, value) => {

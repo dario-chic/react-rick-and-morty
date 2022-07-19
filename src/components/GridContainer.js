@@ -15,24 +15,22 @@ const GridContainer = ({
   url,
   nextPrev,
 }) => {
-  const { texts } = useContext(LanguageContext);
-  const [searchParams] = useSearchParams();
+  if (!data) return;
 
   return (
     <div className="g-container">
       {loader && <Loader />}
       <NextPrev nextPrev={nextPrev} />
       <div className="grid-container">
-        {data
-          ? data.map((el, index) => element(el, index, url))
-          : error && (
-              <ErrorMessage
-                error={error}
-                url={btnOptions.url}
-                home={btnOptions.home}
-                goBack={btnOptions.goBack}
-              />
-            )}
+        {error && (
+          <ErrorMessage
+            error={error}
+            url={btnOptions.url}
+            home={btnOptions.home}
+            goBack={btnOptions.goBack}
+          />
+        )}
+        {data.length > 0 && data.map((el, index) => element(el, index, url))}
       </div>
 
       <NextPrev nextPrev={nextPrev} />

@@ -12,7 +12,11 @@ const ErrorMessage = ({ error, url, home, goBack }) => {
         <p>
           There are no results for this request or something else is going wrong
         </p>
-        {goBack && <Button url={url}>Go back</Button>}
+        {goBack && (
+          <button className="btn" onClick={(e) => window.history.back()}>
+            Go back
+          </button>
+        )}
         <span> </span>
         {home && <Button url="/">Go home</Button>}
         <span> </span>
