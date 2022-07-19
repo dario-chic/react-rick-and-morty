@@ -6,7 +6,10 @@ const Button = ({ url, children, modifiers }) => {
 
   return (
     <button
-      onClick={() => navigate(url)}
+      onClick={() => {
+        navigate(url);
+        window.scrollTo(0, 0);
+      }}
       className={`btn ${modifiers}`}
       style={{ margin: "auto" }}
     >
