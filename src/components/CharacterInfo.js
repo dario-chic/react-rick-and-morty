@@ -107,9 +107,6 @@ const CharacterInfo = ({ url, data }) => {
   };
   return (
     <>
-      <Link to={url} className="close">
-        <i className="fa-solid fa-circle-arrow-left"></i>
-      </Link>
       <figure className="profile">
         <img src={data.image} alt="" />
         <figcaption>{data.name.toUpperCase()}</figcaption>

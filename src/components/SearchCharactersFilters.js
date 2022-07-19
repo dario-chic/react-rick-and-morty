@@ -1,6 +1,10 @@
 import React from "react";
+import { useLocation, useSearchParams } from "react-router-dom";
 
-const SearchCharactersFilters = () => {
+const SearchCharactersFilters = (url) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const location = useLocation();
+
   return (
     <div className="search-form__filters">
       <span>

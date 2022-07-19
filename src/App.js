@@ -32,7 +32,9 @@ function App() {
                   <Route path="characters" element={<Characters />}>
                     <Route
                       path="character/:id"
-                      element={<ModalWindow type={"character"} />}
+                      element={
+                        <ModalWindow url="/characters" type={"character"} />
+                      }
                     />
                   </Route>
                   {/*------------------*/}

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useContext } from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import ThemeContext from "../context/ThemeContext";
 import { helpHttp } from "../helpers/helpHttp";
 import CharacterInfo from "./CharacterInfo";
@@ -53,6 +53,9 @@ const ModalWindow = ({ type, url }) => {
             home={false}
           />
         )}
+        <Link to={url + location.search} className="close">
+          <i className="fa-solid fa-circle-arrow-left"></i>
+        </Link>
         {data && type === "character" ? (
           <CharacterInfo data={data} url={url + location.search} />
         ) : (

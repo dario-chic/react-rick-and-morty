@@ -4,7 +4,6 @@ import LanguageContext from "../context/LanguageContext";
 import Button from "./Button";
 import Character from "./Character";
 import GridContainer from "./GridContainer";
-import ErrorMessage from "./ErrorMessage";
 import { helpHttp } from "../helpers/helpHttp";
 
 const MainCharacters = () => {
@@ -14,6 +13,7 @@ const MainCharacters = () => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
+    setError(false);
     setLoader(true);
     setCharacters(null);
 
@@ -29,9 +29,7 @@ const MainCharacters = () => {
       });
   }, []);
 
-  const handleElement = (el, index) => {
-    return <Character data={el} key={index} />;
-  };
+  const handleElement = (el, index) => <Character data={el} key={index} />;
 
   return (
     <div className="g-container">
@@ -39,16 +37,15 @@ const MainCharacters = () => {
         {texts.home.mainCharactersTitle.toUpperCase()}
       </h2>
 
-      {characters ? (
-        <GridContainer
-          data={characters}
-          loader={loader}
-          texts={texts}
-          element={handleElement}
-        />
-      ) : (
-        <ErrorMessage error={error} url={"/"} home={false} goBack={false} />
-      )}
+      <GridContainer
+        data={characters}
+        loader={loader}
+        error={error}
+        texts={texts}
+        element={handleElement}
+        btnOptions={{ url: "/characters", home: false, goBack: false }}
+      />
+
       <Button url="characters">{texts.es ? "Ver mas" : "See more"}</Button>
     </div>
   );

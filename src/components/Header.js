@@ -52,7 +52,7 @@ const Header = () => {
           {texts.header.home}
         </NavLink>
         <NavLink
-          to="/characters"
+          to="/characters?page=1"
           activeclassname="active"
           className="nav__link"
           onClick={handleActiveNav}

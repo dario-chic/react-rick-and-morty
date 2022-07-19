@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useContext } from "react";
 import { Outlet } from "react-router-dom";
 import MainCharacters from "../components/MainCharacters";
 import Resume from "../components/Resume";
 import ActiveNavContext from "../context/ActiveNavContext";
 import ThemeContext from "../context/ThemeContext";
-import { helpHttp } from "../helpers/helpHttp";
 
 const Home = () => {
   const { theme } = useContext(ThemeContext);

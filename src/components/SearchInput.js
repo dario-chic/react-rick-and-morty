@@ -1,27 +1,14 @@
 import React from "react";
-import { useSearchParams } from "react-router-dom";
 
-const SearchInput = ({ theme }) => {
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  const handleSearch = (e) => {
-    let name = e.target.value;
-
-    if (name) {
-      setSearchParams({ name });
-    } else {
-      setSearchParams({});
-    }
-  };
-
+const SearchInput = ({ theme, filter, handleSearch }) => {
   return (
     <div className={`search-form__i-search ${theme}`}>
       {" "}
       <input
-        type="search"
-        name="search"
+        type="text"
+        name="name"
         placeholder="Search..."
-        value={searchParams.get("name") || ""}
+        value={filter.name || ""}
         onChange={handleSearch}
       />
       <button className="submit">

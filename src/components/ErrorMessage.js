@@ -13,6 +13,7 @@ const ErrorMessage = ({ error, url, home, goBack }) => {
           There are no results for this request or something else is going wrong
         </p>
         {goBack && <Button url={url}>Go back</Button>}
+        <span> </span>
         {home && <Button url="/">Go home</Button>}
         <span> </span>
       </div>
