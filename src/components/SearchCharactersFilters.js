@@ -1,20 +1,16 @@
 import React from "react";
-import { useLocation, useSearchParams } from "react-router-dom";
 
-const SearchCharactersFilters = (url) => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const location = useLocation();
-
+const SearchCharactersFilters = ({ url, handleFilters }) => {
   return (
     <div className="search-form__filters">
       <span>
         Filters<i className="fa-solid fa-angle-down"></i>
       </span>
       <div className="filters">
-        <div className="triangle"></div>
+        {/* <div className="triangle"></div> */}
 
-        <span className="filters__gender">
-          GENDER
+        <div className="filters__gender">
+          <span>GENDER</span>
           <i className="fa-solid fa-mars man" data-gender="male"></i>
           <i className="fa-solid fa-venus woman" data-gender="female"></i>
           <i
@@ -22,16 +18,21 @@ const SearchCharactersFilters = (url) => {
             data-gender="genderless"
           ></i>
           <i className="fa-solid fa-question unknown" data-gender="unknown"></i>
-        </span>
+        </div>
 
-        <span className="filters__status">
-          STATUS
+        <div className="filters__status">
+          <span>STATUS</span>
           <i className="fa-solid fa-skull skull" data-status="dead"></i>
           <i className="fa-solid fa-heart heart" data-status="alive"></i>
           <i className="fa-solid fa-question unknown" data-status="unknown"></i>
-        </span>
+        </div>
 
-        <button className="filters__reset">RESET</button>
+        <button
+          className="filters__reset"
+          onClick={(e) => handleFilters("status", "dead")}
+        >
+          RESET
+        </button>
       </div>
     </div>
   );

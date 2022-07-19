@@ -43,7 +43,7 @@ const MainCharacters = () => {
         error={error}
         texts={texts}
         element={handleElement}
-        btnOptions={{ url: "/characters", home: false, goBack: false }}
+        btnOptions={{ home: false, goBack: false }}
       />
 
       <Button url="characters">{texts.es ? "Ver mas" : "See more"}</Button>

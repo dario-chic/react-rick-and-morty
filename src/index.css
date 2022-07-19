@@ -281,7 +281,7 @@ hr {
   font-size: 1.4rem;
 }
 
-/* ---- Searh Form ---- */
+/* ---- SEARCH FORM ---- */
 
 .search-form {
   position: relative;
@@ -293,6 +293,7 @@ hr {
 }
 
 /** --  Search Input  --- **/
+
 .search-form__i-search {
   display: flex;
   justify-content: center;
@@ -338,6 +339,46 @@ hr {
   from {
     transform: rotate(360deg);
   }
+}
+
+/** --  Search Filters  --- **/
+.search-form__filters {
+  position: relative;
+}
+
+.filters {
+  /* display: none; */
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 0.4rem;
+  background-color: var(--green);
+}
+
+.filters div {
+  text-align: right;
+  margin: 0.5rem 0;
+}
+
+.filters div span {
+  margin-right: 0.5rem;
+}
+
+.filters div i {
+  margin: 0.3rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0.3;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.filters div i.active,
+.filters div i:hover {
+  opacity: 1;
 }
 
 /* --------- HEADER --------- */ /* --------- HEADER --------- */

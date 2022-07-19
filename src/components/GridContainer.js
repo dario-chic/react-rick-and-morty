@@ -3,7 +3,7 @@ import ErrorMessage from "./ErrorMessage";
 import Loader from "./Loader";
 
 const GridContainer = ({ data, loader, element, error, btnOptions, url }) => {
-  // console.log(data[1]);
+  // console.log(data, error);
 
   return (
     <div className="g-container">

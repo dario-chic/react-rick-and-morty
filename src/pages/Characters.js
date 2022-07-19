@@ -22,9 +22,10 @@ const Characters = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
-    let apiUrl = `?page=${searchParams.get("page") || 1}${
-      searchParams.get("name") ? "&name=" + searchParams.get("name") : ""
-    }
+    let apiUrl = `?page=${searchParams.get("page") || 1}
+    ${searchParams.get("name") ? "&name=" + searchParams.get("name") : ""}
+    ${searchParams.get("status") ? "&status=" + searchParams.get("status") : ""}
+    ${searchParams.get("status") ? "&status=" + searchParams.get("status") : ""}
     `;
 
     setCharacters([]);
@@ -40,22 +41,25 @@ const Characters = () => {
           setError(res);
         }
         setLoader(false);
-        console.log(res.results[1], error);
       });
-  }, [url, searchParams, error]);
+  }, [searchParams]);
 
   const handleElement = (el, index) => <Character data={el} key={index} />;
 
   const handleUrl = (object) => {
-    console.log({ ...url, ...object });
-    setUrl({ ...url, ...object });
-    console.log(url);
-    setSearchParams(url);
+    let copyFilter = object;
+    if (copyFilter.name === "") {
+      delete copyFilter.name;
+      searchParams.delete("name");
+    }
+
+    setSearchParams({ ...copyFilter });
+    setUrl({ ...copyFilter });
   };
 
   return (
     <div className={`characters ${theme}`}>
-      <SearchForm type="characterss" url={url} handleUrl={handleUrl} />
+      <SearchForm type="characters" url={url} handleUrl={handleUrl} />
       <GridContainer
         data={characters}
         loader={loader}
