@@ -835,7 +835,8 @@ hr {
     padding-top: 2.5rem;
     text-align: center;
     background-color: var(--lightBlue);
-    transition: background-color 0.5s, right 0.3s ease-in-out !important;
+    transition: background-color 0.5s, right 0.3s ease-in-out;
+    transition-delay: 0.0001s;
   }
 
   .nav.light {
@@ -847,7 +848,7 @@ hr {
   }
 
   .nav.active {
-    right: 0;
+    right: -1rem;
   }
 
   .nav__link {
