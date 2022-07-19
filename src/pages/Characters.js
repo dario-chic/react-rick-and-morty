@@ -5,19 +5,23 @@ import { Outlet, useSearchParams } from "react-router-dom";
 import Character from "../components/Character";
 import GridContainer from "../components/GridContainer";
 import SearchForm from "../components/SearchForm";
-import LanguageContext from "../context/LanguageContext";
 import ThemeContext from "../context/ThemeContext";
 import { helpHttp } from "../helpers/helpHttp";
 
 const Characters = () => {
   const { theme } = useContext(ThemeContext);
-  const { texts } = useContext(LanguageContext);
   const [characters, setCharacters] = useState([]);
   const [nextPrev, setNextPrev] = useState({ next: false, prev: false });
   const [loader, setLoader] = useState(false);
   const [error, setError] = useState(false);
 
   const [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    if (!searchParams.get("page")) {
+      setSearchParams({ page: 1 });
+    }
+  }, [searchParams, setSearchParams]);
 
   useEffect(() => {
     let apiUrl = `?page=${searchParams.get("page") || 1}${
@@ -62,7 +66,7 @@ const Characters = () => {
 
   return (
     <div className={`characters ${theme}`}>
-      <SearchForm type="characters" handleUrl={handleUrl} texts={texts} />
+      <SearchForm type="characters" handleUrl={handleUrl} />
       <GridContainer
         data={characters}
         loader={loader}

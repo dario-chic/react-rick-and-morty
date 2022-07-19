@@ -1,7 +1,4 @@
 import React from "react";
-import { useContext } from "react";
-import { useSearchParams } from "react-router-dom";
-import LanguageContext from "../context/LanguageContext";
 import ErrorMessage from "./ErrorMessage";
 import Loader from "./Loader";
 import NextPrev from "./NextPrev";
