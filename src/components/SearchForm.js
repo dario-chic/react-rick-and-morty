@@ -6,7 +6,7 @@ import { useSearchParams } from "react-router-dom";
 import SearchCharactersFilters from "./SearchCharactersFilters";
 import SearchInput from "./SearchInput";
 
-const SearchForm = ({ type, url, handleUrl }) => {
+const SearchForm = ({ type, handleUrl }) => {
   const [filters, setFilter] = useState({});
   const form = createRef();
   const [searchParams] = useSearchParams();
@@ -44,10 +44,9 @@ const SearchForm = ({ type, url, handleUrl }) => {
       }}
       ref={form}
     >
-      <SearchInput url={url} filters={filters} handleFilters={handleFilters} />
+      <SearchInput filters={filters} handleFilters={handleFilters} />
       {type === "characters" && (
         <SearchCharactersFilters
-          url={url}
           handleFilters={handleFilters}
           filters={filters}
           resetFilters={resetFilters}

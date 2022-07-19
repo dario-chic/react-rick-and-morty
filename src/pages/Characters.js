@@ -9,13 +9,11 @@ import LanguageContext from "../context/LanguageContext";
 import ThemeContext from "../context/ThemeContext";
 import { helpHttp } from "../helpers/helpHttp";
 
-const initialUrl = { page: 1 };
-
 const Characters = () => {
   const { theme } = useContext(ThemeContext);
   const { texts } = useContext(LanguageContext);
-  const [url, setUrl] = useState(initialUrl);
   const [characters, setCharacters] = useState([]);
+  const [nextPrev, setNextPrev] = useState({ next: false, prev: false });
   const [loader, setLoader] = useState(false);
   const [error, setError] = useState(false);
 
@@ -31,9 +29,8 @@ const Characters = () => {
     }
     `;
 
-    // console.log(apiUrl);
-
     setCharacters([]);
+    setNextPrev({ next: false, prev: false });
     setError(false);
     setLoader(true);
 
@@ -42,6 +39,8 @@ const Characters = () => {
       .then((res) => {
         if (!res.err) {
           setCharacters(res.results);
+          console.log(res);
+          setNextPrev({ next: res.info.next, prev: res.info.prev });
         } else {
           setError(res);
         }
@@ -60,25 +59,18 @@ const Characters = () => {
     }
 
     setSearchParams({ page: searchParams.get("page") || 1, ...copyFilter });
-    setUrl({ page: searchParams.get("page") || 1, ...copyFilter });
-    // console.log(url);
   };
 
   return (
     <div className={`characters ${theme}`}>
-      <SearchForm
-        type="characters"
-        url={url}
-        handleUrl={handleUrl}
-        texts={texts}
-      />
+      <SearchForm type="characters" handleUrl={handleUrl} texts={texts} />
       <GridContainer
         data={characters}
         loader={loader}
         error={error}
-        texts={texts}
         element={handleElement}
         btnOptions={{ url: "/characters", home: true, goBack: true }}
+        nextPrev={nextPrev}
       />
       <Outlet />
     </div>

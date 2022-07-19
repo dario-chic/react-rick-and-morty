@@ -1,7 +1,7 @@
 import React from "react";
 import { createRef } from "react";
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import ActiveNavContext from "../context/ActiveNavContext";
 import LanguageContext from "../context/LanguageContext";
 import ScrollContext from "../context/ScrollContext";
@@ -14,6 +14,8 @@ const Header = () => {
   const { scroll } = useContext(ScrollContext);
   const { navIsActive, handleActiveNav } = useContext(ActiveNavContext);
   const header = createRef();
+
+  const navigate = useNavigate();
 
   const delayNav = () => {
     setTimeout(() => {
@@ -34,6 +36,7 @@ const Header = () => {
         src="Rick-And-Morty-Logo.png"
         alt="Rick and Morty"
         className="header__logo"
+        onClick={(e) => navigate("/")}
       />
       <i
         className="fa-solid fa-bars nav__bar"

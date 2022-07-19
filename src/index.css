@@ -40,6 +40,22 @@ hr {
   background-color: var(--darkGreen);
 }
 
+/* --------- Next and Prev Buttons --------- */
+.prev,
+.next {
+  margin: 2rem;
+  background: none;
+  border: none;
+  font-size: 3rem;
+  color: var(--green);
+  cursor: pointer;
+}
+
+.prev:hover,
+.next:hover {
+  color: var(--darkGreen);
+}
+
 /* --------- CHARACTER --------- */
 .character {
   position: relative;
@@ -331,11 +347,11 @@ hr {
 
 .submit:hover {
   color: var(--darkGreen);
-  animation-name: flip;
+  animation-name: flipSubmit;
   animation-duration: 1s;
 }
 
-@keyframes flip {
+@keyframes flipSubmit {
   to {
     transform: rotate();
   }
@@ -493,6 +509,7 @@ hr {
 
 .header__logo {
   width: 7rem;
+  cursor: pointer;
 }
 
 .nav {
