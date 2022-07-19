@@ -6,8 +6,7 @@ import ActiveNavContext from "../context/ActiveNavContext";
 import LanguageContext from "../context/LanguageContext";
 import ScrollContext from "../context/ScrollContext";
 import ThemeContext from "../context/ThemeContext";
-import LanguageChanger from "./LanguageChanger";
-import ThemeChanger from "./ThemeChanger";
+import NavActions from "./NavActions";
 
 const Header = () => {
   const { texts } = useContext(LanguageContext);
@@ -76,13 +75,7 @@ const Header = () => {
         >
           {texts.header.episodes}
         </NavLink>
-
-        <div className="nav__actions">
-          <div>
-            <ThemeChanger className="theme-changer" />
-            <LanguageChanger className="language-changer" />
-          </div>
-        </div>
+        <NavActions />
       </nav>
     </div>
   );
