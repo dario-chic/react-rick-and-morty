@@ -113,6 +113,18 @@ hr {
   background-color: var(--lightBlack);
 }
 
+/* --------- EPISODES --------- */
+.episodes {
+  text-align: center;
+  width: 100%;
+  min-height: calc(100vh - 240.55px);
+  transition: background-color 0.5s ease-in-out;
+}
+
+.episodes.dark {
+  background-color: var(--lightBlack);
+}
+
 /* --------- MODAL WINDOW --------- */
 
 .modal-window-container {

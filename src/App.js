@@ -7,6 +7,7 @@ import { LanguageProvider } from "./context/LanguageContext";
 import { ScrollProvider } from "./context/ScrollContext";
 import { ThemeProvider } from "./context/ThemeContext";
 import Characters from "./pages/Characters";
+import Episodes from "./pages/Episodes";
 import Home from "./pages/Home";
 
 function App() {
@@ -38,14 +39,7 @@ function App() {
                     />
                   </Route>
                   {/*------------------*/}
-                  <Route
-                    path="episodes"
-                    element={
-                      <>
-                        <Outlet />
-                      </>
-                    }
-                  >
+                  <Route path="episodes" element={<Episodes />}>
                     {" "}
                     <Route
                       path="episode/:id"
