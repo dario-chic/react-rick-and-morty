@@ -302,6 +302,7 @@ hr {
 }
 
 .search-form__i-search input {
+  margin-left: 1.7rem;
   padding: 0.55rem;
   flex-grow: 3;
   border-radius: 0.3rem;
@@ -346,10 +347,43 @@ hr {
   position: relative;
 }
 
-.filters {
-  /* position: absolute; */
-  /* display: none; */
+.search-form__filters .background {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 150%;
+  cursor: pointer;
+  z-index: 999px;
+}
+
+.search-form__filters > span {
+  position: relative;
+  margin-left: 2rem;
+  font-size: 1.3rem;
+  color: var(--green);
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.search-form__filters > span:hover {
+  color: var(--darkGreen);
+}
+
+.search-form__filters .background:hover ~ .filters,
+.search-form__filters > span:hover ~ .filters,
+.filters:hover {
   display: flex;
+  animation-name: downFilter;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.filters {
+  position: absolute;
+  top: 25px;
+  right: 0;
+  display: none;
   flex-direction: column;
   justify-items: center;
   align-items: center;
@@ -358,9 +392,30 @@ hr {
   font-weight: bold;
   border-radius: 0.4rem;
   background-color: var(--green);
+  z-index: 1000;
+}
+
+.filters.active {
+  display: flex;
+  animation-name: downFilter;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes downFilter {
+  from {
+    top: 25px;
+    opacity: 0;
+  }
+  to {
+    top: 35px;
+    opacity: 1;
+  }
 }
 
 .filters div {
+  display: flex;
   text-align: right;
   margin: 0.5rem 0;
 }
@@ -398,6 +453,17 @@ hr {
 
 .filters__reset:active {
   outline: 2px solid var(--lightBlack);
+}
+
+.triangle {
+  position: absolute;
+  top: -12px;
+  right: 14px;
+  transform: rotate(45deg);
+  background-color: var(--green);
+  width: 25px;
+  height: 25px;
+  /* z-index: 10; */
 }
 
 /* --------- HEADER --------- */ /* --------- HEADER --------- */
@@ -672,6 +738,17 @@ hr {
   .nav__actions {
     margin: auto;
     margin-top: 1rem;
+  }
+
+  .search-form {
+    position: relative;
+    flex-direction: column;
+  }
+
+  .search-form__filters {
+    position: absolute;
+    bottom: 0;
+    right: 20%;
   }
 }
 

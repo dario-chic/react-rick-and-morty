@@ -47,7 +47,10 @@ const Header = () => {
           to="/"
           activeclassname="active"
           className="nav__link"
-          onClick={handleActiveNav}
+          onClick={(e) => {
+            handleActiveNav();
+            window.scrollTo(5, 0);
+          }}
         >
           {texts.header.home}
         </NavLink>
@@ -55,7 +58,10 @@ const Header = () => {
           to="/characters?page=1"
           activeclassname="active"
           className="nav__link"
-          onClick={handleActiveNav}
+          onClick={(e) => {
+            handleActiveNav();
+            window.scrollTo(5, 0);
+          }}
         >
           {texts.header.characters}
         </NavLink>
@@ -63,7 +69,10 @@ const Header = () => {
           to="/episodes"
           activeclassname="active"
           className="nav__link"
-          onClick={handleActiveNav}
+          onClick={(e) => {
+            handleActiveNav();
+            window.scrollTo(5, 0);
+          }}
         >
           {texts.header.episodes}
         </NavLink>

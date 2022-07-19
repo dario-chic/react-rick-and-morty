@@ -1,6 +1,11 @@
 import React from "react";
+import { useContext } from "react";
+import LanguageContext from "../context/LanguageContext";
 
 const SearchCharactersFilters = ({ handleFilters, filters, resetFilters }) => {
+  const { texts } = useContext(LanguageContext);
+  let { searchFilters } = texts.searchForm;
+
   const selectFilter = (name, value) => {
     handleFilters(name, value, true);
   };
@@ -8,13 +13,15 @@ const SearchCharactersFilters = ({ handleFilters, filters, resetFilters }) => {
   return (
     <div className="search-form__filters">
       <span>
-        Filters<i className="fa-solid fa-angle-down"></i>
+        {searchFilters.title} <span> </span>
+        <i className="fa-solid fa-angle-down"></i>
       </span>
+      <div className="background"></div>
       <div className="filters">
-        {/* <div className="triangle"></div> */}
+        <div className="triangle"></div>
 
         <div className="filters__gender">
-          <span>GENDER</span>
+          <span>{searchFilters.gender.toUpperCase()}</span>
           <i
             className={`fa-solid fa-mars man ${
               filters.gender === "male" && "active"
@@ -42,7 +49,7 @@ const SearchCharactersFilters = ({ handleFilters, filters, resetFilters }) => {
         </div>
 
         <div className="filters__status">
-          <span>STATUS</span>
+          <span>{searchFilters.status.toUpperCase()}</span>
           <i
             className={`fa-solid fa-skull skull ${
               filters.status === "dead" && "active"
@@ -64,7 +71,7 @@ const SearchCharactersFilters = ({ handleFilters, filters, resetFilters }) => {
         </div>
 
         <button className="filters__reset" onClick={resetFilters}>
-          RESET
+          {searchFilters.reset.toUpperCase()}
         </button>
       </div>
     </div>

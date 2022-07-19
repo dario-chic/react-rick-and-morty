@@ -66,7 +66,12 @@ const Characters = () => {
 
   return (
     <div className={`characters ${theme}`}>
-      <SearchForm type="characters" url={url} handleUrl={handleUrl} />
+      <SearchForm
+        type="characters"
+        url={url}
+        handleUrl={handleUrl}
+        texts={texts}
+      />
       <GridContainer
         data={characters}
         loader={loader}
