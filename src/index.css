@@ -43,7 +43,7 @@ hr {
 /* --------- Next and Prev Buttons --------- */
 .prev,
 .next {
-  margin: 2rem;
+  margin: 0 2rem;
   background: none;
   border: none;
   font-size: 3rem;
