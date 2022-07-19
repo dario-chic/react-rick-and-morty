@@ -1,6 +1,12 @@
 import React from "react";
 
-const SearchCharactersFilters = ({ url, handleFilters }) => {
+const SearchCharactersFilters = ({ handleFilters, filters, sendFilter }) => {
+  const selectFilter = (name, value) => {
+    // console.log(name, value);
+    handleFilters(name, value);
+    sendFilter();
+  };
+
   return (
     <div className="search-form__filters">
       <span>
@@ -11,13 +17,26 @@ const SearchCharactersFilters = ({ url, handleFilters }) => {
 
         <div className="filters__gender">
           <span>GENDER</span>
-          <i className="fa-solid fa-mars man" data-gender="male"></i>
-          <i className="fa-solid fa-venus woman" data-gender="female"></i>
+          <i
+            className={`fa-solid fa-mars man ${
+              filters.gender === "male" && "active"
+            }`}
+            onClick={(e) => selectFilter("gender", "male")}
+          ></i>
+          <i
+            className={`fa-solid fa-venus woman ${
+              filters.gender === "female" && "active"
+            }`}
+            onClick={(e) => selectFilter("gender", "female")}
+          ></i>
           <i
             className="fa-solid fa-genderless genderless"
-            data-gender="genderless"
+            onClick={(e) => selectFilter("gender", "genderless")}
           ></i>
-          <i className="fa-solid fa-question unknown" data-gender="unknown"></i>
+          <i
+            className="fa-solid fa-question unknown"
+            onClick={(e) => selectFilter("gender", "unknown")}
+          ></i>
         </div>
 
         <div className="filters__status">

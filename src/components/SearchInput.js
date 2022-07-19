@@ -1,6 +1,6 @@
 import React from "react";
 
-const SearchInput = ({ theme, filter, handleFilters }) => {
+const SearchInput = ({ theme, filters, handleFilters }) => {
   return (
     <div className={`search-form__i-search ${theme}`}>
       {" "}
@@ -8,7 +8,7 @@ const SearchInput = ({ theme, filter, handleFilters }) => {
         type="text"
         name="name"
         placeholder="Search..."
-        value={filter.name || ""}
+        value={filters.name || ""}
         onChange={(e) => handleFilters(e.target.name, e.target.value)}
       />
       <button className="submit">

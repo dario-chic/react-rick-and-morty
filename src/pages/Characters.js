@@ -25,7 +25,7 @@ const Characters = () => {
     let apiUrl = `?page=${searchParams.get("page") || 1}
     ${searchParams.get("name") ? "&name=" + searchParams.get("name") : ""}
     ${searchParams.get("status") ? "&status=" + searchParams.get("status") : ""}
-    ${searchParams.get("status") ? "&status=" + searchParams.get("status") : ""}
+    ${searchParams.get("gender") ? "&gender=" + searchParams.get("gender") : ""}
     `;
 
     setCharacters([]);
@@ -53,8 +53,10 @@ const Characters = () => {
       searchParams.delete("name");
     }
 
-    setSearchParams({ ...copyFilter });
-    setUrl({ ...copyFilter });
+    setSearchParams({ ...url, ...copyFilter });
+    setUrl({ ...url, ...copyFilter });
+
+    console.log(url);
   };
 
   return (
