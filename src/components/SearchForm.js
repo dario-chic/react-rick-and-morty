@@ -1,19 +1,38 @@
 import React from "react";
 import { createRef } from "react";
+import { useEffect } from "react";
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import SearchCharactersFilters from "./SearchCharactersFilters";
 import SearchInput from "./SearchInput";
 
 const SearchForm = ({ type, url, handleUrl }) => {
   const [filters, setFilter] = useState({});
   const form = createRef();
+  const [searchParams] = useSearchParams();
 
-  const sendFilter = () => {
-    handleUrl(filters);
+  useEffect(() => {
+    let params = {
+      name: searchParams.get("name"),
+      gender: searchParams.get("gender"),
+      status: searchParams.get("status"),
+    };
+
+    if (!params.name) delete params.name;
+    if (!params.gender) delete params.gender;
+    if (!params.status) delete params.status;
+
+    setFilter(params);
+  }, [searchParams]);
+
+  const handleFilters = (name, value, instant) => {
+    setFilter({ ...filters, [name]: value });
+    if (instant) handleUrl({ ...filters, [name]: value });
   };
 
-  const handleFilters = (name, value) => {
-    setFilter({ ...filters, [name]: value });
+  const resetFilters = () => {
+    setFilter({});
+    handleUrl({});
   };
 
   return (
@@ -21,7 +40,7 @@ const SearchForm = ({ type, url, handleUrl }) => {
       className="search-form"
       onSubmit={(e) => {
         e.preventDefault();
-        sendFilter();
+        handleUrl(filters);
       }}
       ref={form}
     >
@@ -30,8 +49,8 @@ const SearchForm = ({ type, url, handleUrl }) => {
         <SearchCharactersFilters
           url={url}
           handleFilters={handleFilters}
-          sendFilter={sendFilter}
           filters={filters}
+          resetFilters={resetFilters}
         />
       )}
     </form>

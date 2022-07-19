@@ -9,7 +9,7 @@ const SearchInput = ({ theme, filters, handleFilters }) => {
         name="name"
         placeholder="Search..."
         value={filters.name || ""}
-        onChange={(e) => handleFilters(e.target.name, e.target.value)}
+        onChange={(e) => handleFilters(e.target.name, e.target.value, false)}
       />
       <button className="submit">
         <i className="fa-solid fa-magnifying-glass"></i>

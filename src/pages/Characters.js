@@ -22,11 +22,16 @@ const Characters = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
-    let apiUrl = `?page=${searchParams.get("page") || 1}
-    ${searchParams.get("name") ? "&name=" + searchParams.get("name") : ""}
-    ${searchParams.get("status") ? "&status=" + searchParams.get("status") : ""}
-    ${searchParams.get("gender") ? "&gender=" + searchParams.get("gender") : ""}
+    let apiUrl = `?page=${searchParams.get("page") || 1}${
+      searchParams.get("name") ? "&name=" + searchParams.get("name") : ""
+    }${
+      searchParams.get("status") ? "&status=" + searchParams.get("status") : ""
+    }${
+      searchParams.get("gender") ? "&gender=" + searchParams.get("gender") : ""
+    }
     `;
+
+    // console.log(apiUrl);
 
     setCharacters([]);
     setError(false);
@@ -48,15 +53,15 @@ const Characters = () => {
 
   const handleUrl = (object) => {
     let copyFilter = object;
+
     if (copyFilter.name === "") {
       delete copyFilter.name;
       searchParams.delete("name");
     }
 
-    setSearchParams({ ...url, ...copyFilter });
-    setUrl({ ...url, ...copyFilter });
-
-    console.log(url);
+    setSearchParams({ page: searchParams.get("page") || 1, ...copyFilter });
+    setUrl({ page: searchParams.get("page") || 1, ...copyFilter });
+    // console.log(url);
   };
 
   return (

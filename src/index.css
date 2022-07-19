@@ -347,6 +347,7 @@ hr {
 }
 
 .filters {
+  /* position: absolute; */
   /* display: none; */
   display: flex;
   flex-direction: column;
@@ -379,6 +380,24 @@ hr {
 .filters div i.active,
 .filters div i:hover {
   opacity: 1;
+}
+
+.filters__reset {
+  padding: 0.3rem 1rem;
+  border-radius: 0.4rem;
+  border: none;
+  background: var(--lightBlue);
+  color: #fff;
+  cursor: pointer;
+  background-color: var(--lightBlue);
+}
+
+.filters__reset:hover {
+  background-color: #0d6d79;
+}
+
+.filters__reset:active {
+  outline: 2px solid var(--lightBlack);
 }
 
 /* --------- HEADER --------- */ /* --------- HEADER --------- */
