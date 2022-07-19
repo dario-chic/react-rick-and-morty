@@ -30,6 +30,14 @@ const SearchForm = ({ type, handleUrl }) => {
     if (instant) handleUrl({ ...filters, [name]: value, page: 1 });
   };
 
+  const desactiveFilter = (key) => {
+    let filtersCopy = { ...filters };
+    delete filtersCopy[key];
+
+    setFilter(filtersCopy);
+    handleUrl(filtersCopy);
+  };
+
   const resetFilters = () => {
     setFilter({});
     handleUrl({});
@@ -50,6 +58,7 @@ const SearchForm = ({ type, handleUrl }) => {
           handleFilters={handleFilters}
           filters={filters}
           resetFilters={resetFilters}
+          desactiveFilter={desactiveFilter}
         />
       )}
     </form>

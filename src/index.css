@@ -449,9 +449,8 @@ hr {
   opacity: 0.3;
   transition: opacity 0.2s ease-in-out;
 }
-
-.filters div i.active,
-.filters div i:hover {
+/* .filters div i:hover */
+.filters div i.active {
   opacity: 1;
 }
 

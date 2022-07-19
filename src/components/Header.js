@@ -17,18 +17,10 @@ const Header = () => {
 
   const navigate = useNavigate();
 
-  const delayNav = () => {
-    setTimeout(() => {
-      header.current.classList.toggle("scrollTop");
-    }, 1000);
-
-    return "scrollTop";
-  };
-
   return (
     <div
       className={`header ${theme} ${scroll ? "up" : "down"} ${
-        navIsActive ? "scrollTop" : () => delayNav()
+        navIsActive ? "scrollTop" : ""
       }`}
       ref={header}
     >

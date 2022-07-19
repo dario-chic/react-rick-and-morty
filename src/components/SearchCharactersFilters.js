@@ -1,11 +1,14 @@
 import React from "react";
 import { useContext } from "react";
-import { useSearchParams } from "react-router-dom";
 import LanguageContext from "../context/LanguageContext";
 
-const SearchCharactersFilters = ({ handleFilters, filters, resetFilters }) => {
+const SearchCharactersFilters = ({
+  handleFilters,
+  filters,
+  resetFilters,
+  desactiveFilter,
+}) => {
   const { texts } = useContext(LanguageContext);
-  const [searchParams, setSearchParams] = useSearchParams();
   let { searchFilters } = texts.searchForm;
 
   const selectFilter = (name, value) => {
@@ -28,25 +31,41 @@ const SearchCharactersFilters = ({ handleFilters, filters, resetFilters }) => {
             className={`fa-solid fa-mars man ${
               filters.gender === "male" && "active"
             }`}
-            onClick={(e) => selectFilter("gender", "male")}
+            onClick={(e) =>
+              filters.gender !== "male"
+                ? selectFilter("gender", "male")
+                : desactiveFilter("gender")
+            }
           ></i>
           <i
             className={`fa-solid fa-venus woman ${
               filters.gender === "female" && "active"
             }`}
-            onClick={(e) => selectFilter("gender", "female")}
+            onClick={(e) =>
+              filters.gender !== "female"
+                ? selectFilter("gender", "female")
+                : desactiveFilter("gender")
+            }
           ></i>
           <i
             className={`fa-solid fa-genderless genderless ${
               filters.gender === "genderless" && "active"
             }`}
-            onClick={(e) => selectFilter("gender", "genderless")}
+            onClick={(e) =>
+              filters.gender !== "genderless"
+                ? selectFilter("gender", "genderless")
+                : desactiveFilter("gender")
+            }
           ></i>
           <i
             className={`fa-solid fa-question unknown ${
               filters.gender === "unknown" && "active"
             }`}
-            onClick={(e) => selectFilter("gender", "unknown")}
+            onClick={(e) =>
+              filters.gender !== "unknown"
+                ? selectFilter("gender", "unknown")
+                : desactiveFilter("gender")
+            }
           ></i>
         </div>
 
@@ -56,19 +75,31 @@ const SearchCharactersFilters = ({ handleFilters, filters, resetFilters }) => {
             className={`fa-solid fa-skull skull ${
               filters.status === "dead" && "active"
             }`}
-            onClick={(e) => selectFilter("status", "dead")}
+            onClick={(e) =>
+              filters.status !== "dead"
+                ? selectFilter("status", "dead")
+                : desactiveFilter("status")
+            }
           ></i>
           <i
             className={`fa-solid fa-heart heart ${
               filters.status === "alive" && "active"
             }`}
-            onClick={(e) => selectFilter("status", "alive")}
+            onClick={(e) =>
+              filters.status !== "alive"
+                ? selectFilter("status", "alive")
+                : desactiveFilter("status")
+            }
           ></i>
           <i
             className={`fa-solid fa-question unknown ${
               filters.status === "unknown" && "active"
             }`}
-            onClick={(e) => selectFilter("status", "unknown")}
+            onClick={(e) =>
+              filters.status !== "unknown"
+                ? selectFilter("status", "unknown")
+                : desactiveFilter("status")
+            }
           ></i>
         </div>
 
