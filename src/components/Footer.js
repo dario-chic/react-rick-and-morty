@@ -17,13 +17,25 @@ const Footer = () => {
       }}
     >
       <div className="footer__links">
-        <Link to="/" className="footer__links-home">
+        <Link
+          to="/"
+          className="footer__links-home"
+          onClick={(e) => window.scrollTo(0, 0)}
+        >
           {texts.footer.home}
         </Link>
-        <Link to="characters" className="footer__links-characters">
+        <Link
+          to="characters"
+          className="footer__links-characters"
+          onClick={(e) => window.scrollTo(0, 0)}
+        >
           {texts.footer.characters}
         </Link>
-        <Link to="episodes" className="footer__links-episodes">
+        <Link
+          to="episodes"
+          className="footer__links-episodes"
+          onClick={(e) => window.scrollTo(0, 0)}
+        >
           {texts.footer.episodes}
         </Link>
       </div>
