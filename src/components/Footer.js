@@ -59,7 +59,12 @@ const Footer = () => {
           <i className="fa-brands fa-github"></i>
         </a>
       </div>
-      <a href="https://www.dariochic.com" className="footer__personal-website">
+      <a
+        href="https://www.dariochic.com"
+        className="footer__personal-website"
+        target="_blank"
+        rel="noreferrer"
+      >
         www.dariochic.com
       </a>
     </footer>

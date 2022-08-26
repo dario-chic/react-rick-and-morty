@@ -1,6 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import LanguageContext from "../context/LanguageContext";
+import logo from "./Rick-And-Morty-Logo.png";
 
 const Resume = ({ theme }) => {
   const { texts } = useContext(LanguageContext);
@@ -8,7 +9,7 @@ const Resume = ({ theme }) => {
     <div className={`home__resume ${theme}`}>
       <div className="home__resume-text">
         <p>
-          <img src="./Rick-And-Morty-Logo.png" alt="Rick and Morty Logo" />
+          <img src={logo} alt="Rick and Morty Logo" />
           {texts.home.resume}
         </p>
         <div className="img">

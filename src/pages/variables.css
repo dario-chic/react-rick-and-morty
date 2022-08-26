@@ -1,0 +1,43 @@
+:root {
+  --primary-color: #1c1d25;
+  --primary-color2: #3487d1;
+  --primary-color2-50: #3487d180;
+  --primary-color2-25: #3487d140;
+  --primary-color3: #4297cd;
+
+  --secondary-color: #141414;
+  --secondary-color-98: #14141495;
+  --secondary-color2: #ba593b;
+  --secondary-color3: #764abc;
+  --secondary-color4: #ffe70d;
+
+  --color-text: #fffffff2;
+  --color-text-2: #ffffffcc;
+  --inactive: #ffffff95;
+
+  --react: #4397cd;
+  --redux: #764abc;
+  --html: #ba593b;
+  --css: #3487d1;
+  --js: #ffe70d;
+  --figma: #f24e1e;
+  --else: #ffffff;
+}
+
+:root {
+  --general-padding: 25px;
+  --max-width: 1024px;
+  --content-width: 900px;
+
+  --margin-i: 50px;
+}
+
+:root {
+  --big-border-r: 10px;
+  --small-border-r: 5px;
+
+  --box-shadow: 0 8px 7px var(--secondary-color-98);
+  --box-small-shadow: 0 4px 8px var(--secondary-color-98);
+
+  --fast-transition: all 0.15s ease-in-out;
+}

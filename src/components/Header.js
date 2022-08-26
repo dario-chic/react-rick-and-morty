@@ -7,6 +7,7 @@ import LanguageContext from "../context/LanguageContext";
 import ScrollContext from "../context/ScrollContext";
 import ThemeContext from "../context/ThemeContext";
 import NavActions from "./NavActions";
+import logo from "./Rick-And-Morty-Logo.png";
 
 const Header = () => {
   const { texts } = useContext(LanguageContext);
@@ -25,7 +26,7 @@ const Header = () => {
       ref={header}
     >
       <img
-        src="Rick-And-Morty-Logo.png"
+        src={logo}
         alt="Rick and Morty"
         className="header__logo"
         onClick={(e) => navigate("/")}

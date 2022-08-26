@@ -3,7 +3,7 @@ import { createContext } from "react";
 
 const ThemeContext = createContext();
 
-const initialTheme = localStorage.getItem("RaMTheme") || "light";
+const initialTheme = localStorage.getItem("RaMTheme") || "dark";
 
 const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(initialTheme);
