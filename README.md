@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Rick and Morty (react version)
+
+This is a website to find detailed information about the Rick and Morty series. The design of the site is not the best, since I did not focus on working on the design, but on the logic and functionality.
+
+On this website I coded interesting functionalities like getting data with parameters via query strings in the URL, opening a modal window via the URL, and using two different APIs simultaneously to be able to display more information.
+
+This project helped me a lot to improve my programming logic and better understand how query strings work.
+
+**Ps:** This was my first React project, so it's not perfect. I am aware that it could be improved in many different ways, reducing components, making the code more readable, refactoring certain functionality, and using other tools to improve its performance. Maybe in the future, I'll do a v2 or another similar project with better practices.
+
+**Ps2**: Since this is a personal project to test and train my skills, I built most of the logic and code myself.
+
+[See Website](https://aguacandy.vercel.app/)
+
+## Tools and Languages
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+- [React](https://reactjs.org/)
+- [React Router](https://reactrouter.com/)
+- [Sass](https://sass-lang.com/)
+- [Rick and Morty Api](https://rickandmortyapi.com/)
+- [Tv Maze Api](https://www.tvmaze.com/api)
 
-In the project directory, you can run:
+## Important Features
 
-### `npm start`
+These are some of the most important features I code on this project.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Query Strings**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To make this site work I had to put information through query strings using useParams (from react-router) and get data from that URL to get data from APIs. So the site can work dynamically by URL and if you send that URL to other people they get the same results.
 
-### `npm test`
+**Search Filter**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This seems like an easy feature, but it was a bit more difficult than I thought. It works by sending parameters via query strings, so I had to find a solution for the following issues:
 
-### `npm run build`
+- Find a way to send all the parameters without losing the parameters already set.
+- Activate styles by scanning URLs.
+- Mix the name parameter with the rest of the search parameters.
+- Send parameter to query strings on click and remove it on click of the same button.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Simultaneously use of 2 Apis**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[Rick and Morty API](https://rickandmortyapi.com/) is a great API, but it doesn't have enough information to make a more complete website, especially in the episodes section.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+It looked so boring with no image and just some text, so I had to find a way to make it cooler. After searching the web, I found [Tv Maze API](https://www.tvmaze.com/api), which provides information and images on many different series, including Rick and Morty.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Through some specific logic, I found a solution to request for each episode to get the information needed to complete the episode.

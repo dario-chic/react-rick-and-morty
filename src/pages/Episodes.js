@@ -58,6 +58,7 @@ const Episodes = () => {
                     info: el.episode,
                   };
                   setEpisodes((episodes) => [...episodes, episodio]);
+                  setLoader(false);
                 }
               });
           });
@@ -65,7 +66,6 @@ const Episodes = () => {
         } else {
           setError(res);
         }
-        setLoader(false);
       });
   }, [searchParams]);
 
