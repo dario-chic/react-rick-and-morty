@@ -1,4 +1,4 @@
-# Rick and Morty (react version)
+# Rick and Morty 👽 (react version)
 
 This is a website to find detailed information about the Rick and Morty series. The design of the site is not the best, since I did not focus on working on the design, but on the logic and functionality.
 
@@ -17,9 +17,13 @@ This project helped me a lot to improve my programming logic and get better unde
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 - [React](https://reactjs.org/)
+
 - [React Router](https://reactrouter.com/)
+
 - [Sass](https://sass-lang.com/)
+
 - [Rick and Morty Api](https://rickandmortyapi.com/)
+
 - [Tv Maze Api](https://www.tvmaze.com/api)
 
 ## Important Features
