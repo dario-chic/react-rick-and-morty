@@ -25,12 +25,14 @@ const Characters = () => {
 
   useEffect(() => {
     let apiUrl = `?page=${searchParams.get("page") || 1}${
-      searchParams.get("name") && "&name=" + searchParams.get("name")
-    }${searchParams.get("status") && "&status=" + searchParams.get("status")}${
-      searchParams.get("gender") && "&gender=" + searchParams.get("gender")
+      searchParams.get("name") ? "&name=" + searchParams.get("name") : ""
+    }${
+      searchParams.get("status") ? "&status=" + searchParams.get("status") : ""
+    }${
+      searchParams.get("gender") ? "&gender=" + searchParams.get("gender") : ""
     }
     `;
-
+    console.log(apiUrl);
     setCharacters([]);
     setNextPrev({ next: false, prev: false });
     setError(false);
