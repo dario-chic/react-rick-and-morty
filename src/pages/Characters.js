@@ -32,7 +32,6 @@ const Characters = () => {
       searchParams.get("gender") ? "&gender=" + searchParams.get("gender") : ""
     }
     `;
-    console.log(apiUrl);
     setCharacters([]);
     setNextPrev({ next: false, prev: false });
     setError(false);
