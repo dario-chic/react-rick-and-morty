@@ -22,10 +22,11 @@ const MainCharacters = () => {
       .then((res) => {
         if (!res.err) {
           setCharacters(res);
+          setLoader(false);
         } else {
           setError(res);
+          setLoader(false);
         }
-        setLoader(false);
       });
   }, []);
 
