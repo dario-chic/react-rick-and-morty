@@ -62,7 +62,7 @@ While the  **Rick and Morty API**  provided a solid foundation, it lacked suffic
 
 ## How to use
 
-1. Clona el repositorio:
+1. Clone the repository:
    ```bash
    git clone https://github.com/dario-chic/react-rick-and-morty.git
    ```
@@ -70,7 +70,7 @@ While the  **Rick and Morty API**  provided a solid foundation, it lacked suffic
    ```bash
    cd react-rick-and-morty
    ```
-3. Instala las dependencias:
+3. Install dependencies:
    ```bash
    npm install
    ```
