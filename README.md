@@ -7,15 +7,13 @@
 ![Badge](https://img.shields.io/badge/Licencia-MIT-blue)
 ## Tabla de contenidos 📑
 
-- [Description](#description-)
+- [Description](#description)
 - [Características principales](#main-features)
-- [Tecnologías utilizadas](#tecnologías-utilizadas)
-- [Instalación y configuración](#instalación-y-configuración)
-- [Capturas de pantalla](#capturas-de-pantalla)
-- [Demo en vivo](#demo-en-vivo)
-- [Contribución](#contribución)
-- [Licencia](#licencia)
-- [Contacto](#contacto)
+- [Tech Stack](#tech-stack)
+- [How to use](#how-to-use)
+- [Live demo](#live-demo)
+- [Contribution](#contribution)
+- [License](#license)
 
 ## Description
 
