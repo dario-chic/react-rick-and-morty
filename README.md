@@ -1,52 +1,103 @@
-# Rick and Morty 👽 (react version)
 
-This is a website to find detailed information about the Rick and Morty series. The design of the site is not the best, since I did not focus on working on the design, but on the logic and functionality.
+# Rick and Morty (React Version)
 
-On this website I coded interesting functionalities like getting data with parameters via query strings in the URL, opening a modal window via the URL, and using two different APIs simultaneously to be able to display more information.
 
-This project helped me a lot to improve my programming logic and get better understanding about how query strings work.
+![Portada](https://raw.githubusercontent.com/dario-chic/react-rick-and-morty/refs/heads/main/banner.webp)
+![Badge](https://img.shields.io/badge/Estado-Finalizado-brightgreen)
+![Badge](https://img.shields.io/badge/Licencia-MIT-blue)
+## Tabla de contenidos 📑
 
-**Ps:** This was my first React project, so it's not perfect. I am aware it could be improved in a lot of different ways, reducing components, making the code more readable, refactoring certain functionalities, and using other tools to improve its performance. Maybe in the future I'll make a better version or another similar project with better practices.
+- [Description](#description-)
+- [Características principales](#main-features)
+- [Tecnologías utilizadas](#tecnologías-utilizadas)
+- [Instalación y configuración](#instalación-y-configuración)
+- [Capturas de pantalla](#capturas-de-pantalla)
+- [Demo en vivo](#demo-en-vivo)
+- [Contribución](#contribución)
+- [Licencia](#licencia)
+- [Contacto](#contacto)
 
-**Ps2**: Since this is a personal project to test and train my skills, I built most of the logic and code myself.
+## Description
 
-[See Website](https://aguacandy.vercel.app/)
+This project was a website designed to explore and display detailed information about the **Rick and Morty** series. While the design was not the main focus, the development emphasized logic and functionality, allowing me to implement advanced technical features and improve my skills as a developer.
 
-## Tools and Languages
+_💡This project represents where I started with React. Looking back, I see areas for improvement, but it was instrumental in shaping my understanding of web development. Today, I approach projects with more experience, better practices, and a sharper focus on performance and scalability._
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Main Features
 
-- [React](https://reactjs.org/)
+### Query Strings
 
-- [React Router](https://reactrouter.com/)
+To make the site dynamic, I implemented  **query strings**  using  `useParams`  from React Router. This allowed the URL to fetch specific data from APIs, ensuring that users sharing the same URL would see identical results. This feature enhanced the site's interactivity and usability.
 
-- [Sass](https://sass-lang.com/)
+### Search Filter
 
-- [Rick and Morty Api](https://rickandmortyapi.com/)
+The search filter was more challenging than anticipated. It required solving several issues:
+-   Preserving existing parameters while adding new ones.
+    
+-   Dynamically applying styles based on the URL.
+    
+-   Combining the  `name`  parameter with other search filters.
+    
+-   Adding or removing parameters from the query string when clicking filter buttons.
+    
 
-- [Tv Maze Api](https://www.tvmaze.com/api)
+This feature improved the user experience by making the search functionality more intuitive and flexible.
 
-## Important Features
+### Dual API Integration
 
-These are some of the most important features I code on this project.
+While the  **Rick and Morty API**  provided a solid foundation, it lacked sufficient detail, especially for the episodes section. To enhance the site, I integrated the  **TV Maze API**, which provided additional information and images for each episode. By implementing specific logic, I was able to fetch and display complementary data, making the episodes section more engaging and visually appealing.
 
-**Query Strings**
 
-To make this site work I had to put information through query strings using useParams (from react-router) and get data from that URL to fetch specific data from APIs. The site can work dynamically by URL and if you send that URL to other people they will get the same results.
+## Tech Stack
 
-**Search Filter**
+- **Frontend:** 
+	- [React](https://reactjs.org/)
+	- [React Router](https://reactrouter.com/)
+	- [Javascript ECS6+](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+	- [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
+	- [Sass](https://sass-lang.com/)
+	- [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML)
+	
+- **APIs / Tools:**
+	- [Rick and Morty Api](https://rickandmortyapi.com/)
+	- [Tv Maze Api](https://www.tvmaze.com/api)
+	- [Fontawesome](https://fontawesome.com/)
 
-This seems like an easy feature, but it was a bit more difficult than I thought. It works by sending parameters via query strings, so I had to find a solution for the following issues:
+## How to use
 
-- Find a way to send all the parameters without losing the parameters already set.
-- Activate styles by scanning the URL.
-- Mix the name parameter with the rest of the search parameters.
-- Send parameter to query strings on click a filter button and remove it clicking the same button.
+Proporciona instrucciones claras sobre cómo instalar y configurar el proyecto localmente.
 
-**Simultaneously use of 2 Apis**
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/dario-chic/react-rick-and-morty.git
+   ```
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
+3. Inicia el servidor:
+   ```bash
+   npm run dev
+   ```
 
-[Rick and Morty API](https://rickandmortyapi.com/) is a great API, but it doesn't have enough information to make a more complete website, especially in the episodes section.
+## Live Demo
 
-It looked so boring with no image and just some text, so I had to find a way to make it cooler. After searching on the web, I found [Tv Maze API](https://www.tvmaze.com/api), which provides information and images on many different series, including Rick and Morty.
+[See live demo](https://react-rick-and-morty-psi.vercel.app/)
 
-Through some specific logic, I found a solution to request for each episode to get the information needed to complete the episode.
+## Contribution
+
+¡Las contribuciones son bienvenidas! Si tienes ideas para mejorar este proyecto, si encuentras algún error o simplemente quieres agregar una nueva funcionalidad, no dudes en abrir un **issue** o enviar un **pull request**. ¡Gracias por tu interés en contribuir!
+1. Haz un fork del proyecto.
+2. Crea una rama con tu feature (`git checkout -b feature/nueva-funcionalidad`).
+3. Haz commit de tus cambios (`git commit -m 'Añade nueva funcionalidad'`).
+4. Haz push a la rama (`git push origin feature/nueva-funcionalidad`).
+5. Abre un Pull Request.
+
+## License 📜
+Distributed under the [MIT License](https://opensource.org/licenses/MIT). See LICENSE.txt for more information.
+
+---
+
+Made with ❤️ by [Dario Chic](https://github.com/dario-chic)  
+📧 Contact me: [contact@dariochic.dev](mailto:contact@dariochic.dev)  
+🔗 [LinkedIn](https://www.linkedin.com/in/dariochic/) | [Portfolio](https://dariochic.dev)
