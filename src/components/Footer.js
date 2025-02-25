@@ -60,12 +60,12 @@ const Footer = () => {
         </a>
       </div>
       <a
-        href="https://www.dariochic.com"
+        href="https://www.dariochic.dev"
         className="footer__personal-website"
         target="_blank"
         rel="noreferrer"
       >
-        www.dariochic.com
+        www.dariochic.dev
       </a>
     </footer>
   );
