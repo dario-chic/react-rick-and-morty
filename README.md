@@ -3,8 +3,8 @@
 
 
 ![Portada](https://raw.githubusercontent.com/dario-chic/react-rick-and-morty/refs/heads/main/banner.webp)
-![Badge](https://img.shields.io/badge/Estado-Finalizado-brightgreen)
-![Badge](https://img.shields.io/badge/Licencia-MIT-blue)
+![Badge](https://img.shields.io/badge/Status-Finished-brightgreen)
+![Badge](https://img.shields.io/badge/License-MIT-blue)
 ## Table of contents
 
 - [Description](#description)
