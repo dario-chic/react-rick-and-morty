@@ -63,18 +63,20 @@ While the  **Rick and Morty API**  provided a solid foundation, it lacked suffic
 
 ## How to use
 
-Proporciona instrucciones claras sobre cómo instalar y configurar el proyecto localmente.
-
 1. Clona el repositorio:
    ```bash
    git clone https://github.com/dario-chic/react-rick-and-morty.git
    ```
-2. Instala las dependencias:
+2. Navigate to the project folder:
+   ```bash
+   cd react-rick-and-morty
+   ```
+3. Instala las dependencias:
    ```bash
    npm install
    ```
-3. Inicia el servidor:
-   ```bash
+4. Start the development server:
+ ```bash
    npm run dev
    ```
 
