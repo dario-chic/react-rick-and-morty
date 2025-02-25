@@ -50,7 +50,6 @@ While the  **Rick and Morty API**  provided a solid foundation, it lacked suffic
 
 - **Frontend:** 
 	- [React](https://reactjs.org/)
-	- [React Router](https://reactrouter.com/)
 	- [Javascript ECS6+](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 	- [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
 	- [Sass](https://sass-lang.com/)
