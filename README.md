@@ -8,7 +8,7 @@
 ## Tabla de contenidos 📑
 
 - [Description](#description)
-- [Características principales](#main-features)
+- [Main features](#main-features)
 - [Tech Stack](#tech-stack)
 - [How to use](#how-to-use)
 - [Live demo](#live-demo)
@@ -84,12 +84,13 @@ Proporciona instrucciones claras sobre cómo instalar y configurar el proyecto l
 
 ## Contribution
 
-¡Las contribuciones son bienvenidas! Si tienes ideas para mejorar este proyecto, si encuentras algún error o simplemente quieres agregar una nueva funcionalidad, no dudes en abrir un **issue** o enviar un **pull request**. ¡Gracias por tu interés en contribuir!
-1. Haz un fork del proyecto.
-2. Crea una rama con tu feature (`git checkout -b feature/nueva-funcionalidad`).
-3. Haz commit de tus cambios (`git commit -m 'Añade nueva funcionalidad'`).
-4. Haz push a la rama (`git push origin feature/nueva-funcionalidad`).
-5. Abre un Pull Request.
+Contributions are welcome! If you have ideas to improve this project, find a bug, or simply want to add a new feature, feel free to open an issue or submit a pull request. Thank you for your interest in contributing!
+
+1. Fork the project.
+2. Create a new branch (`git checkout -b feature/new-feature`).
+3. Commit your changes (`git commit -m 'Add new feature'`).
+4. Push to the branch (`git push origin feature/new-feature`).
+5. Open a Pull Request.
 
 ## License 📜
 Distributed under the [MIT License](https://opensource.org/licenses/MIT). See LICENSE.txt for more information.
